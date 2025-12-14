@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة أمزوار | لاستيراد السيارات وقطع الغيار والآليات</title>
+    
+    <!-- خط تجوال (Tajawal) - خط تقني وعصري -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        amez: {
+                            blue: '#0066CC',    // أزرق شعار السيارة
+                            dark: '#111111',    // أسود
+                            gray: '#1F2937',    // رمادي غامق للخلفيات
+                            metal: '#9CA3AF',   // لون معدني
+                            accent: '#3B82F6'   // أزرق فاتح للتووهج
+                        }
+                    },
+                    fontFamily: {
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'carbon': "url('https://www.transparenttextures.com/patterns/carbon-fibre.png')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #0f1012;
+            color: #e5e7eb;
+        }
+
+        /* تصميم الزوايا المائلة (Skewed Design) */
+        .skewed-bg {
+            transform: skewY(-3deg);
+            transform-origin: top left;
+        }
+        .unskew {
+            transform: skewY(3deg);
+        }
+
+        /* تأثير التوهج للأزرار */
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+
+        /* شريط التنقل الجانبي للشاشات الكبيرة */
+        .side-nav-line {
+            width: 3px;
+            height: 0;
+            background: #0066CC;
+            transition: height 0.3s;
+        }
+        .group:hover .side-nav-line {
+            height: 100%;
+        }
+        
+        /* تخصيص السكرول بار */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0066CC;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- نافبار بسيط وشفاف -->
+    <nav class="fixed w-full z-50 bg-amez-dark/90 backdrop-blur border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- الشعار -->
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="شعار أمزوار" class="h-12 w-auto">
+                <div>
+                    <h1 class="text-2xl font-black tracking-tighter uppercase italic">AMEZWAR</h1>
+                    <p class="text-xs text-amez-metal tracking-wide">أمزوار لاستيراد السيارات</p>
+                </div>
+            </div>
+
+            <!-- روابط القائمة -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-sm font-bold hover:text-amez-blue transition uppercase tracking-wider">الرئيسية</a>
+                <a href="#about" class="text-sm font-bold hover:text-amez-blue transition uppercase tracking-wider">عن الشركة</a>
+                
+            </div>
+
+             <!-- زر القائمة للموبايل -->
+             <button class="md:hidden text-white text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- قائمة الموبايل -->
+        <div id="mobile-menu" class="hidden md:hidden bg-amez-gray border-t border-gray-700 p-4">
+            <a href="#home" class="block py-3 border-b border-gray-700 hover:text-amez-blue">الرئيسية</a>
+            <a href="#about" class="block py-3 border-b border-gray-700 hover:text-amez-blue">عن الشركة</a>
+            <a href="#services" class="block py-3 border-b border-gray-700 hover:text-amez-blue">خدماتنا</a>
+            <a href="#parts" class="block py-3 border-b border-gray-700 hover:text-amez-blue">قطع الغيار</a>
+            <a href="#contact" class="block py-3 text-amez-blue font-bold">اتصل بنا</a>
+        </div>
+    </nav>
+
+    <!-- الهيرو سكشن (بتصميم مائل) -->
+    <header id="home" class="relative min-h-screen flex items-center overflow-hidden pt-20">
+        <!-- الخلفية المائلة -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+        </div>
+
+        <!-- شكل تزييني أزرق -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-amez-blue/10 skew-x-[-20deg] translate-x-20 border-l border-amez-blue/30 hidden lg:block"></div>
+
+        <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 border border-amez-blue/50 bg-amez-blue/10 px-4 py-1 rounded text-amez-blue text-sm font-bold mb-6">
+                    <i class="fa-solid fa-gear fa-spin"></i>
+                    <span>الجودة الأصلية والضمان الأكيد</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+                    قوة الأداء <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amez-blue to-white">ودقة الاختيار</span>
+                </h1>
+                <p class="text-gray-400 text-lg mb-8 max-w-lg leading-relaxed border-r-4 border-amez-blue pr-4">
+                    شركة أمزوار، خياركم الأول لاستيراد السيارات الحديثة، الآليات الثقيلة، وقطع الغيار الأصلية من كبرى الشركات العالمية.
+                </p>
+                
+            </div>
+            
+            <!-- عنصر مرئي -->
+            <div class="hidden lg:block relative">
+                <div class="relative z-10 border-2 border-amez-blue/30 p-2 rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1486262715619-01b8c22971f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="" class="rounded w-full shadow-2xl grayscale hover:grayscale-0 transition duration-500">
+                </div>
+                <!-- مربع خلفي للتزيين -->
+                <div class="absolute -bottom-6 -left-6 w-full h-full border-2 border-amez-gray bg-amez-gray/50 rounded -z-10"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- شريط الإحصائيات (مائل) -->
+    <div class="bg-amez-blue relative z-20 -mt-10 py-8 transform -skew-y-2 border-t-4 border-black">
+        <div class="container mx-auto px-6 transform skew-y-2">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+                <div>
+                    <i class="fa-solid fa-car text-3xl mb-2 opacity-80"></i>
+                    <h3 class="text-2xl font-black">100%</h3>
+                    <p class="text-sm opacity-80">سيارات مضمونة</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-wrench text-3xl mb-2 opacity-80"></i>
+                    <h3 class="text-2xl font-black">أصلي</h3>
+                    <p class="text-sm opacity-80">قطع غيار</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-truck-monster text-3xl mb-2 opacity-80"></i>
+                    <h3 class="text-2xl font-black">ثقيلة</h3>
+                    <p class="text-sm opacity-80">آليات ومعدات</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-globe text-3xl mb-2 opacity-80"></i>
+                    <h3 class="text-2xl font-black">عالمي</h3>
+                    <p class="text-sm opacity-80">استيراد مباشر</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم عن الشركة (جديد) -->
+    <section id="about" class="py-24 bg-amez-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- الرؤية والرسالة -->
+                <div>
+                    <span class="text-amez-blue font-bold tracking-widest uppercase text-sm">من نحن</span>
+                    <h2 class="text-4xl font-black text-white mt-2 mb-6 border-b-4 border-amez-blue pb-2 max-w-sm">شركة أمزوار للاستيراد</h2>
+                    
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        تأسست شركة أمزوار على مبدأ توفير الجودة والموثوقية في سوق السيارات الليبي. نحن متخصصون في استيراد السيارات الحديثة، والآليات الثقيلة، وجميع قطع الغيار الأصلية مباشرةً من المصادر العالمية لضمان أعلى مستويات الأداء.
+                    </p>
+                    
+                    <div class="bg-amez-gray p-6 rounded border-r-4 border-amez-blue mt-8">
+                        <h4 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-crosshairs text-amez-blue"></i>
+                            رؤيتنا
+                        </h4>
+                        <p class="text-gray-400">أن نكون الشركة الرائدة والموثوقة في ليبيا لتقديم حلول متكاملة لقطاع السيارات والمعدات الثقيلة، مدعومة بخدمة عملاء استثنائية.</p>
+                    </div>
+
+                   
+                </div>
+
+                <!-- صورة رمزية (Engine Block) -->
+                <div class="hidden lg:block relative">
+                    <img src="https://images.unsplash.com/photo-1596707335905-207d4b476b7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="" class="rounded-lg shadow-2xl opacity-80 hover:opacity-100 transition duration-500 transform hover:scale-[1.02]">
+                    <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    
+
+    
+
+    <!-- فاصل صورة -->
+    <section class="h-64 bg-fixed bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+        <div class="absolute inset-0 bg-amez-blue/80 flex items-center justify-center">
+            <h2 class="text-4xl md:text-5xl font-black text-white text-center border-4 border-white p-8 transform -rotate-2">
+                AMEZWAR AUTO
+            </h2>
+        </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section id="contact" class="py-24 bg-gradient-to-br from-amez-gray to-black relative overflow-hidden">
+        <!-- عناصر خلفية -->
+        <i class="fa-solid fa-gear text-[300px] text-white opacity-5 absolute -top-20 -left-20 fa-spin" style="animation-duration: 20s;"></i>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- معلومات الاتصال -->
+                <div>
+                    <h2 class="text-4xl font-black text-white mb-8 border-r-4 border-amez-blue pr-4">اتصل بنا</h2>
+                    <p class="text-gray-400 mb-10 text-lg">نحن هنا لتلبية طلباتكم. تفضلوا بزيارة مقرنا أو الاتصال بنا للاستفسار عن السيارات وقطع الغيار المتاحة.</p>
+                    
+                    <div class="space-y-8">
+                        <!-- العنوان -->
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 bg-amez-blue/20 rounded flex items-center justify-center text-amez-blue group-hover:bg-amez-blue group-hover:text-white transition">
+                                <i class="fa-solid fa-map-location text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">المقر الرئيسي</h4>
+                                <p class="text-gray-400">ليبيا - طرابلس، حي الأندلس</p>
+                                <p class="text-gray-500 text-sm">شارع الكنيسة</p>
+                            </div>
+                        </div>
+
+                        <!-- الهاتف -->
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 bg-amez-blue/20 rounded flex items-center justify-center text-amez-blue group-hover:bg-amez-blue group-hover:text-white transition">
+                                <i class="fa-solid fa-headset text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">أرقام الهاتف</h4>
+                                <div class="flex flex-col gap-2 mt-1" dir="ltr">
+                                    <a href="tel:+218926394915" class="text-gray-400 hover:text-white transition text-right font-mono text-lg">+218 92 639 4915</a>
+                                    <a href="tel:+218924181520" class="text-gray-400 hover:text-white transition text-right font-mono text-lg">+218 92 418 1520</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- نموذج أو خريطة تخيلية -->
+              
+
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="bg-black py-8 border-t border-gray-900 text-center text-gray-500 text-sm">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2024 شركة أمزوار. جميع الحقوق محفوظة.</p>
+            <div class="flex gap-4 text-lg">
+                <a href="#" class="hover:text-amez-blue transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-amez-blue transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
